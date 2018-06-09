@@ -68,7 +68,7 @@ GPIO.output(Z12, GPIO.HIGH)
 # --------------------------------------------------------------
 
 ### MQTT settings
-broker = '192.168.0.23'
+broker = 'Hassio IP'
 command_topic = "sprinkler/command"
 state_topic = "sprinkler/state"
 mqttQos = 0
@@ -132,7 +132,7 @@ def sprinkler_zone_command(payload):
 
 print("starting to connect")
 client = mqtt.Client()
-client.username_pw_set(username='pi',password='peterbilt')  # need this
+client.username_pw_set(username='name',password='password')  # need this
 
 client.on_connect = on_connect    # call these on connect and on message
 client.on_message = on_message
