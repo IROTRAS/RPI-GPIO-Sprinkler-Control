@@ -21,18 +21,18 @@ GPIO.setwarnings(False)
 # Declare variables
 GPIO.setmode(GPIO.BCM)
 # Sprinkler Zones
-Z1 = 21
-Z2 = 2
-Z3 = 3
-Z4 = 4
-Z5 = 5
-Z6 = 6
-Z7 = 7
-Z8 = 8
-Z9 = 9
-Z10 = 10
-Z11 = 11
-Z12 = 12
+Z1 = 21     #Orange
+Z2 = 2      #Pink
+Z3 = 3      #Yellow
+Z4 = 4      #Purple
+Z5 = 5      #Green
+Z6 = 6      #Grey
+Z7 = 7      #Brown
+Z8 = 8      #
+Z9 = 9      #
+Z10 = 10    #
+Z11 = 11    #
+Z12 = 12    #
 
 # setup GPIO pins to all be output
 GPIO.setup(Z1,GPIO.OUT)
@@ -92,26 +92,122 @@ def on_message(client, userdata, msg):
 def process_trigger(payload):
     if payload == 'Z1OPEN':
         print('Zone 1 OPEN triggered')
-        #data = 'Z1OPEN' 
         post_sprinkler_zone_state(payload)
         sprinkler_zone_command(payload)
         
 
     if payload == 'Z1CLOSE':
-        print('Zone 1 CLOSE triggered')
-        #data = 'Z1CLOSE' 
+        print('Zone 1 CLOSE triggered') 
         post_sprinkler_zone_state(payload)
         sprinkler_zone_command(payload)
 
     if payload == 'Z2OPEN':
-        print('Zone 2 OPEN triggered')
-        #data = 'Z2OPEN' 
+        print('Zone 2 OPEN triggered') 
         post_sprinkler_zone_state(payload)
         sprinkler_zone_command(payload)
     
     if payload == 'Z2CLOSE':
         print('Zone 2 CLOSE triggered')
-        #data = 'Z2CLOSE' 
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+
+    if payload == 'Z3OPEN':
+        print('Zone 3 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z3CLOSE':
+        print('Zone 3 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+
+    if payload == 'Z4OPEN':
+        print('Zone 4 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z4CLOSE':
+        print('Zone 4 CLOSE triggered') 
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+
+    if payload == 'Z5OPEN':
+        print('Zone 5 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z5CLOSE':
+        print('Zone 5 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z6OPEN':
+        print('Zone 6 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z6CLOSE':
+        print('Zone 6 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z7OPEN':
+        print('Zone 7 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z7CLOSE':
+        print('Zone 7 CLOSE triggered') 
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z8OPEN':
+        print('Zone 8 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z8CLOSE':
+        print('Zone 8 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z9OPEN':
+        print('Zone 9 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z9CLOSE':
+        print('Zone 9 CLOSE triggered') 
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z10OPEN':
+        print('Zone 10 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z10CLOSE':
+        print('Zone 10 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z11OPEN':
+        print('Zone 11 OPEN triggered') 
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z11CLOSE':
+        print('Zone 11 CLOSE triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z12OPEN':
+        print('Zone 12 OPEN triggered')
+        post_sprinkler_zone_state(payload)
+        sprinkler_zone_command(payload)
+    
+    if payload == 'Z12CLOSE':
+        print('Zone 12 CLOSE triggered')
         post_sprinkler_zone_state(payload)
         sprinkler_zone_command(payload)
 
@@ -128,6 +224,66 @@ def sprinkler_zone_command(payload):
     if payload == 'Z2CLOSE':
         # Turn GPIO Pin low
         GPIO.output(Z2, GPIO.HIGH)
+    if payload == 'Z3OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z3, GPIO.LOW)
+    if payload == 'Z3CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z3, GPIO.HIGH)
+    if payload == 'Z4OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z4, GPIO.LOW)
+    if payload == 'Z4CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z4, GPIO.HIGH)
+    if payload == 'Z5OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z5, GPIO.LOW)
+    if payload == 'Z5CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z5, GPIO.HIGH)
+    if payload == 'Z6OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z6, GPIO.LOW)
+    if payload == 'Z6CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z6, GPIO.HIGH)
+    if payload == 'Z7OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z7, GPIO.LOW)
+    if payload == 'Z7CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z7, GPIO.HIGH)
+    if payload == 'Z8OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z8, GPIO.LOW)
+    if payload == 'Z8CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z8, GPIO.HIGH)
+    if payload == 'Z9OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z9, GPIO.LOW)
+    if payload == 'Z9CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z9, GPIO.HIGH)
+    if payload == 'Z10OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z10, GPIO.LOW)
+    if payload == 'Z10CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z10, GPIO.HIGH)
+    if payload == 'Z11OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z11, GPIO.LOW)
+    if payload == 'Z11CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z11, GPIO.HIGH)
+    if payload == 'Z12OPEN':
+        # Turn GPIO Pin high
+        GPIO.output(Z12, GPIO.LOW)
+    if payload == 'Z12CLOSE':
+        # Turn GPIO Pin low
+        GPIO.output(Z12, GPIO.HIGH)
 
 
 print("starting to connect")
